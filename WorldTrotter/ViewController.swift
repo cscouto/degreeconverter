@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var celsiusLbl: UILabel!
     @IBOutlet var fahrenTextField: UITextField!
@@ -46,6 +46,18 @@ class ViewController: UIViewController {
         }else{
             celsiusLbl.text = "???"
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let hasDecimal = textField.text?.range(of: ".")
+        let newTextHasDecimal = string.range(of: ".")
+        
+        if hasDecimal != nil, newTextHasDecimal != nil{
+            return false
+        }else{
+            return true
+        }
+        
     }
     
     @IBAction func finishEditingTextField(_ textField: UITextField){
