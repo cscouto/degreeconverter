@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ConvertVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var celsiusLbl: UILabel!
     @IBOutlet var fahrenTextField: UITextField!
@@ -17,6 +17,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         updateCelsius()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("coco")
     }
     
     let numberFormatter: NumberFormatter = {
