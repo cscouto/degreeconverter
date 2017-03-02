@@ -31,5 +31,23 @@ class MapVC: UIViewController{
         topConstraint.isActive = true
         trailingConstraint.isActive = true
         leadingConstraint.isActive = true
+        
+        segmentedControl.addTarget(self, action: #selector(MapVC.mapTypedChange(_:)), for: .valueChanged)
+    }
+    
+    func mapTypedChange(_ segControl: UISegmentedControl) {
+        switch (segControl.selectedSegmentIndex) {
+        case 0:
+            mapView.mapType = .standard
+            break
+        case 1:
+            mapView.mapType = .hybrid
+            break
+        case 2:
+            mapView.mapType = .satellite
+            break
+        default:
+            break
+        }
     }
 }
