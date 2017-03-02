@@ -19,10 +19,6 @@ class ConvertVC: UIViewController, UITextFieldDelegate {
         updateCelsius()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("coco")
-    }
-    
     let numberFormatter: NumberFormatter = {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
@@ -53,8 +49,12 @@ class ConvertVC: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let hasDecimal = textField.text?.range(of: ".")
-        let newTextHasDecimal = string.range(of: ".")
+        
+        let currentLocale = Locale.current
+        let decimal = currentLocale.decimalSeparator ?? "."
+        
+        let hasDecimal = textField.text?.range(of: decimal)
+        let newTextHasDecimal = string.range(of: decimal)
         
         if hasDecimal != nil, newTextHasDecimal != nil{
             return false
@@ -65,8 +65,8 @@ class ConvertVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func finishEditingTextField(_ textField: UITextField){
-        if let text = textField.text, let value = Double(text){
-            fahreinValue = Measurement(value: value, unit: .fahrenheit)
+        if let text = textField.text, let number = numberFormatter.number(from: text){
+            fahreinValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         }else{
             fahreinValue = nil
         }
