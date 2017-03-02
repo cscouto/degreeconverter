@@ -12,8 +12,7 @@
         <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConvertVC" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -87,6 +86,7 @@
                         <outlet property="fahrenTextField" destination="408-Ar-DIS" id="q70-jA-O6b"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="M1H-8W-Rrs">
                     <connections>
                         <action selector="dissmisKeyboard:" destination="BYZ-38-t0r" id="wnZ-Q9-ukg"/>
@@ -99,10 +99,6 @@
         <scene sceneID="blj-Dw-vY2">
             <objects>
                 <viewController id="eHv-6V-A2B" customClass="MapVC" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="vfD-a8-QP3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="4C6-Un-zRa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ime-b8-goH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,6 +111,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QTP-EH-nsY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="kjS-Cc-91c">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
